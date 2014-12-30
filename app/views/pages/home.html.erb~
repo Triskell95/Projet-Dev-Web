@@ -1,0 +1,8 @@
+<h1>Accueil</h1>
+<p>Bienvenu sur notre site Ruby on Rails !
+<a href="http://railstutorial.org/">Ruby on Rails Tutorial</a></p>
+
+<p>Lucien et Thibaut</p>
+
+<%= link_to "S'inscrire !", signup_path, :class => "signup_button round" %>
+
