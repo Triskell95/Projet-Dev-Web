@@ -1,11 +1,18 @@
 MyApp::Application.routes.draw do
 
-  get 'sessions/new'
-
-	resources :users
+	resources :users 
 	resources :sessions, :only => [:new, :create, :destroy]
+	resources :products
+	
+	resources :products do
+		collection do
+			match 'search' => 'products#search', via: [:get, :post], as: :search
+		end
+	end
 
+	get 'sessions/new'
   get 'users/new'
+  get 'products/new'
   
 
 
@@ -15,7 +22,8 @@ MyApp::Application.routes.draw do
 	match '/help' => 'pages#help', :via => [:get], :as => 'help'
 	match '/signup' => 'users#new', :via => [:get, :post], :as => 'signup'
 	match '/signin' => 'sessions#new', :via => [:get, :post], :as => 'signin'
-	match '/signout' => 'sessions#destroy', :via => [:get, :post], :as => 'signout'
+	#match '/signout' => 'sessions#destroy', :via => [:get, :post], :as => 'signout'
+	match '/signout', to: 'sessions#destroy', via: 'delete'
 	
   #get 'pages/home'
 

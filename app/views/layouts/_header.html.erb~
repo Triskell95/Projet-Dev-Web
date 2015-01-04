@@ -1,11 +1,21 @@
 <header>
-        <%= image_tag("logo.png", :alt => "Application Exemple", :class => "round") %>
+        <!--<%= image_tag("logo.png", :alt => "Application Exemple", :class => "round") %>-->
+        <%= image_tag("logo.png", height:"250", width:"1200") %>
         <%= link_to root_path %>
+        
+        <%= search_form_for @q, url: search_products_path, html: { method: :post }  do |f| %>
+					<%= f.label :categorie %>
+					<%= f.text_field :categorie_cont %>
+  				<%= f.submit %>
+				<% end %>
+				
         <nav class="round">
           <ul>
             <li><%= link_to "Accueil", root_path %></li>
             <% if signed_in? %>
+            	<li><%= link_to "Users", users_path %></li>
             	<li><%= link_to "Mon profil", edit_user_path(current_user) %></li>
+            	<li><%= link_to "Mes produits", products_path(current_user) %></li>
             <% end %>
             <li><%= link_to "Aide", help_path %></li>
             <% if signed_in? %>

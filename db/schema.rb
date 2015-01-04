@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141224142021) do
+ActiveRecord::Schema.define(version: 20150103144806) do
+
+  create_table "products", force: true do |t|
+    t.integer  "user"
+    t.string   "categorie"
+    t.text     "description"
+    t.text     "commentaire"
+    t.integer  "note"
+    t.decimal  "prix"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "nom"
@@ -20,6 +31,7 @@ ActiveRecord::Schema.define(version: 20141224142021) do
     t.datetime "updated_at"
     t.string   "encrypted_password"
     t.string   "salt"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
