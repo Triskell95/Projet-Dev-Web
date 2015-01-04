@@ -3,7 +3,6 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
       <th>Categorie</th>
       <th>Description</th>
       <th>Commentaire</th>
@@ -17,7 +16,6 @@
     <% @products.each do |product| %>
       <tr>
       	<% if (current_user.id == product.user) %>
-        	<td><%= product.user %></td>
         	<td><%= product.categorie %></td>
         	<td><%= product.description %></td>
         	<td><%= product.commentaire %></td>

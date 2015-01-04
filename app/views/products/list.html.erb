@@ -15,23 +15,14 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-      	<% if (current_user.id == product.user) %>
         	<td><%= product.categorie %></td>
         	<td><%= product.description %></td>
         	<td><%= product.commentaire %></td>
         	<td><%= product.note %></td>
         	<td><%= product.prix %>€</td>
-        	<td><%= link_to 'Voir', product %></td>
-        	<% if current_user.admin? || (current_user.id == product.user) %> |
-        		<td><%= link_to 'Modifier', edit_product_path(product) %></td>
-        		<td><%= link_to 'Supprimer', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        	<% end %>
-        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'Ajouter un nouveau produit', new_product_path %>
