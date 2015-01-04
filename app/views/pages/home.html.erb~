@@ -3,7 +3,7 @@
 <p>Bienvenu sur notre site Ruby on Rails !
 <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a></p>
 <p>Ce site propose aux utilisateurs de s'enregistrer pour bénéficier de conseils sur ce qu'ils pourraient acheter en fonction de leur budget ou de leurs envies.<br />
-<p>L'idée est simple : vous vous créez un compte sur le site, vous ajouter les produits que vous possédez grâce au formulaire "Mes produits", puis quand un autre utilisateur se connectera et qu'il cherchera un produit par catégorie, il pourra voir ce que les autres utilisateurs possèdent et s'ils conseillent ou non ces produits.</p>
+<p>L'idée est simple : vous vous créez un compte sur le site, vous ajoutez les produits que vous possédez grâce au formulaire "Mes produits", puis quand un autre utilisateur se connectera et qu'il cherchera un produit par catégorie, il pourra voir ce que les autres utilisateurs possèdent et s'ils conseillent ou non ces produits.</p>
 <p>Lucien et Thibaut</p>
 
 <% if !signed_in? %>
