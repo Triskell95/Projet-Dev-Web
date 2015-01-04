@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
   	@product = Product.find(params[:id])
-		@titre = @product.categorie
+		#@titre = @product.categorie
   end
 
   # GET /products/new
@@ -89,7 +89,7 @@ class ProductsController < ApplicationController
   end  
   
   def fulllist
-  	@products = Product.all
+  	@products = Product.order(note: :desc).all
   end	
   
 
