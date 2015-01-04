@@ -1,11 +1,6 @@
 class Product < ActiveRecord::Base
 	belongs_to :users
-	#before_create :owner
-	  
-  #def owner
-    #self.user_id = current_user.id
-	#end
-	
+
 	validates :categorie, presence: true, length: {maximum: 50}
 								 
 	validates :description, presence: true, length: {minimum: 1, maximum: 20, tokenizer: lambda { |str| str.split(/\s+/) },

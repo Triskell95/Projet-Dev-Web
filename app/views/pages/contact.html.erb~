@@ -1,4 +1,3 @@
-<h1>Contact</h1>
-<p>Cette page est en cours de développement !
-<a href="http://railstutorial.org/">Ruby on Rails Tutorial</p>	
-
+<h1>Nous contacter</h1>
+<p>Vous pouvez nous contacter l'équipe de développement de ce site en cliquant sur le lien ci-dessous</p><br />
+<a href="mailto:cassagnes@et.esiea.fr">Nous contacter !</a>

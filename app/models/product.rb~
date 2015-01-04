@@ -6,8 +6,6 @@ class Product < ActiveRecord::Base
     #self.user_id = current_user.id
 	#end
 	
-	validates :user, presence: true
-	
 	validates :categorie, presence: true, length: {maximum: 50}
 								 
 	validates :description, presence: true, length: {minimum: 1, maximum: 20, tokenizer: lambda { |str| str.split(/\s+/) },

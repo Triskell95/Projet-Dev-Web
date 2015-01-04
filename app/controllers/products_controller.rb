@@ -86,7 +86,7 @@ class ProductsController < ApplicationController
   
   def search
     index
-    render :index
+    render :list
   end
 
   private
