@@ -1,7 +1,7 @@
 <header>
         <!--<%= image_tag("logo.png", :alt => "Application Exemple", :class => "round") %>-->
-        <%= image_tag("logo.png", height:"250", width:"1200") %>
-        <%= link_to root_path %>
+        <%= image_tag("logo.png", height:"250", width:"1215") %>
+        <!--<%= link_to root_path %>-->
         
         <%= search_form_for @q, url: search_products_path, html: { method: :post }  do |f| %>
 					<%= f.label :categorie %>
