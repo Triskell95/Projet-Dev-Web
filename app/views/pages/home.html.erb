@@ -8,7 +8,6 @@
 <p>Réalisé par Lucien Cassagnes (<a href="mailto:cassagnes@et.esiea.fr">contacter Lucien</a>) et Thibaut Da Silva (<a href="mailto:tdasilva@et.esiea.fr">contacter Thibaut</a>)</p>
 
 <% if !signed_in? %>
-	<%= link_to "S'inscrire !", signup_path, :class => "signup_button round" %>
+	<%= link_to "S'inscrire", signup_path, :class => "signup_button round" %>
 	<%= link_to "Se connecter", signin_path, :class => "signin_button round" %>
 <% end %>
-

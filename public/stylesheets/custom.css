@@ -85,7 +85,7 @@ nav ul li a:hover {
 
 /* Bouton inscription */
 a.signup_button {
-	margin-left: auto;
+	margin-left: 12em;
 	margin-right: auto;
 	display: inline-block;
 	text-align: center;
@@ -95,6 +95,7 @@ a.signup_button {
 	font-size: 150%;
 	font-weight: bold;
 	padding: 20px;
+	vertical-align: middle;
 }
 
 a.signin_button {
@@ -108,6 +109,7 @@ a.signin_button {
 	font-size: 150%;
 	font-weight: bold;
 	padding: 20px;
+	vertical-align: middle;
 }
 
 a.letsgo_button {

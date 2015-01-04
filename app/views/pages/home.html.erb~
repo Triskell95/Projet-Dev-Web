@@ -11,4 +11,3 @@
 	<%= link_to "S'inscrire !", signup_path, :class => "signup_button round" %>
 	<%= link_to "Se connecter", signin_path, :class => "signin_button round" %>
 <% end %>
-
