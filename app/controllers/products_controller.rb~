@@ -89,7 +89,7 @@ class ProductsController < ApplicationController
   end  
   
   def fulllist
-  	@products = Product.order(:note :desc).all
+  	@products = Product.order(note: :desc).all
   end	
   
 

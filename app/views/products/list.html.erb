@@ -1,0 +1,28 @@
+<h1>Votre recherche</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Categorie de produit</th>
+      <th>Description du produit</th>
+      <th>Commentaire</th>
+      <th>Note sur 10</th>
+      <th>Prix (en €)</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        	<td><%= product.categorie %></td>
+        	<td><%= product.description %></td>
+        	<td><%= product.commentaire %></td>
+        	<td><%= product.note %></td>
+        	<td><%= product.prix %>€</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
