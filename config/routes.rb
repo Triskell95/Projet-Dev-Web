@@ -13,6 +13,7 @@ MyApp::Application.routes.draw do
 	get 'sessions/new'
   get 'users/new'
   get 'products/new'
+  get 'products/show'
   
 
 
@@ -24,6 +25,8 @@ MyApp::Application.routes.draw do
 	match '/signin' => 'sessions#new', :via => [:get, :post], :as => 'signin'
 	#match '/signout' => 'sessions#destroy', :via => [:get, :post], :as => 'signout'
 	match '/signout', to: 'sessions#destroy', via: 'delete'
+	match '/show', to: 'product#show', :via => [:get], :as => 'show'
+	
 	
   #get 'pages/home'
 

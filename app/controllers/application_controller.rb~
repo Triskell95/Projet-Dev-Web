@@ -4,6 +4,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
  	before_filter :set_global_search_variable
+ 	before_filter :set_product, :except => [:destroy, :index]
+	
+	#def current_user
+    #@current_user ||= session[:current_user_id] &&
+     #User.find_by_id(session[:current_user_id])
+  #end
+  
+	def set_product
+  	@product = current_user.admin? ? Product.find(params[:id]) : current_user.products.find(params[:id]) 
+	end
 
   def set_global_search_variable
     @q = Product.search(params[:q])

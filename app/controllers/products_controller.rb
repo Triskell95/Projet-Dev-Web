@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   #before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate
 
+
   # GET /products
   # GET /products.json
   def index
@@ -23,12 +24,12 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
-    #@titre = "Ajouter un produit"
+    @product.user = @current_user.id
+    @titre = "Ajouter un produit"
 	end
 	
    def create
-  		@product = @user.products.new(product_params)
-  		@product.user = current_user
+   		product = current_user.products.build(product_params)
   		if @product.save
     		redirect_to user_products_path(@product, @user), notice: "Product successfully created!"
   		else
@@ -38,7 +39,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-  	@product = Product.find(params[:id])
+  	@product = Product.find_by_user(params[:id])
   end
 
   # POST /products
@@ -96,7 +97,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:categorie, :description, :commentaire, :note, :prix)
+      params.require(:product).permit(:user, :categorie, :description, :commentaire, :note, :prix)
     end
     
     def authenticate

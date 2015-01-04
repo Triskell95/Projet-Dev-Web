@@ -7,7 +7,7 @@
 
 <p>
   <strong>Type:</strong>
-  <%= @product.type %>
+  <%= @product.categorie %>
 </p>
 
 <p>

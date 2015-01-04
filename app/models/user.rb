@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 
+	has_many :products
 	attr_accessor :password
 	
 	validates :nom, presence: true, length: {maximum: 50}

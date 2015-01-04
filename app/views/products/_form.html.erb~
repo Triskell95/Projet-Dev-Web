@@ -11,7 +11,6 @@
     </div>
   <% end %>
 
-	
 	<div class="field">
     <%= f.label :user %><br>
     <%= f.text_field :user %>

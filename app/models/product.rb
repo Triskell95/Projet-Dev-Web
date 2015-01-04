@@ -1,5 +1,10 @@
 class Product < ActiveRecord::Base
 	belongs_to :users
+	#before_create :owner
+	  
+  #def owner
+    #self.user_id = current_user.id
+	#end
 	
 	validates :categorie, presence: true, length: {maximum: 50}
 								 
@@ -16,5 +21,6 @@ class Product < ActiveRecord::Base
 	validates :note, presence: true, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 5 }
 	
 	validates :prix, presence: true, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 5000 }
+
 	
 end

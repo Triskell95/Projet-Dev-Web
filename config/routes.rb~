@@ -5,12 +5,15 @@ MyApp::Application.routes.draw do
 	resources :products
 	
 	resources :products do
-		collection {post :search, to: 'product#index'}
+		collection do
+			match 'search' => 'products#search', via: [:get, :post], as: :search
+		end
 	end
 
 	get 'sessions/new'
   get 'users/new'
   get 'products/new'
+  get 'products/show'
   
 
 
@@ -22,6 +25,8 @@ MyApp::Application.routes.draw do
 	match '/signin' => 'sessions#new', :via => [:get, :post], :as => 'signin'
 	#match '/signout' => 'sessions#destroy', :via => [:get, :post], :as => 'signout'
 	match '/signout', to: 'sessions#destroy', via: 'delete'
+	match '/product/user_id', to: 'product#show', :via => [:get], :as => 'show'
+	
 	
   #get 'pages/home'
 
