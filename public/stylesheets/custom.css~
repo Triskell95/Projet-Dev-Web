@@ -4,14 +4,6 @@
 	margin-right: auto;
 }
 
-div.logo {
-	background-image: url(images/logo.png);
-	background-repeat: no-repeat;
-	width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 10em;
-}
 
 body {
 	background: #cff;
@@ -24,6 +16,7 @@ header {
 header img {
 	padding: 1em;
 	background: #fff;
+	margin-bottom: 2em;
 }
 
 section {
@@ -110,6 +103,19 @@ a.signin_button {
 	display: inline-block;
 	text-align: center;
 	width: 220px;
+	color: #fff;
+	background: #006400;
+	font-size: 150%;
+	font-weight: bold;
+	padding: 20px;
+}
+
+a.letsgo_button {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+	width: 190px;
 	color: #fff;
 	background: #006400;
 	font-size: 150%;

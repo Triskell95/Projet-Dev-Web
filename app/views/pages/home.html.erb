@@ -4,7 +4,8 @@
 <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a></p>
 <p>Ce site propose aux utilisateurs de s'enregistrer pour bénéficier de conseils sur ce qu'ils pourraient acheter en fonction de leur budget ou de leurs envies.<br />
 <p>L'idée est simple : vous vous créez un compte sur le site, vous ajoutez les produits que vous possédez grâce au formulaire "Mes produits", puis quand un autre utilisateur se connectera et qu'il cherchera un produit par catégorie, il pourra voir ce que les autres utilisateurs possèdent et s'ils conseillent ou non ces produits.</p>
-<p>Lucien et Thibaut</p>
+<p>Nous vous conseillons de visiter la page d'<%= link_to "aide", help_path %> pour de plus amples informations</p>
+<p>Réalisé par Lucien Cassagnes (<a href="mailto:cassagnes@et.esiea.fr">contacter Lucien</a>) et Thibaut Da Silva (<a href="mailto:tdasilva@et.esiea.fr">contacter Thibaut</a>)</p>
 
 <% if !signed_in? %>
 	<%= link_to "S'inscrire !", signup_path, :class => "signup_button round" %>
