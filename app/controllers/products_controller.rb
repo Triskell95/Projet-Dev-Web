@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
   #before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate
-
+  before_action :authenticate, except: [:index, :show, :fulllist]
 
   # GET /products
   # GET /products.json
@@ -18,7 +17,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
   	@product = Product.find(params[:id])
-  	@titre = @product.categorie
+		@titre = @product.categorie
   end
 
   # GET /products/new
@@ -87,7 +86,12 @@ class ProductsController < ApplicationController
   def search
     index
     render :list
-  end
+  end  
+  
+  def fulllist
+  	@products = Product.all
+  end	
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,6 +1,5 @@
 <header>
-        <!--<%= image_tag("logo.png", :alt => "Application Exemple", :class => "round") %>-->
-        <%= image_tag("lor.jpg", height:"250", width:"1215") %>
+        <%= image_tag("lor.jpg", height:"350", width:"1215") %>
         
         <%= search_form_for @q, url: search_products_path, html: { method: :post }  do |f| %>
 					<%= f.label :categorie %>
@@ -11,6 +10,7 @@
         <nav class="round">
           <ul>
             <li><%= link_to "Accueil", root_path %></li>
+            <li><%= link_to "Tous les produits", products_path %></li>
             <% if signed_in? %>
             	<li><%= link_to "Users", users_path %></li>
             	<li><%= link_to "Mon profil", edit_user_path(current_user) %></li>

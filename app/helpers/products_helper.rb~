@@ -7,4 +7,8 @@ module ProductsHelper
 		@user = User.find(params[:id])
 		@product = Product.find(params[user.id]).nil?
 	end
+	
+	  def fulllist
+  	@products = Product.all
+  end
 end
