@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
   	unless params[:q].blank?
-    	@q = Product.ransack(params[:q])
+    	@q = Product.order(note: :desc).ransack(params[:q])
     	@products = @q.result(distinct: true)
   	else
     	@products = Product.all
@@ -38,7 +38,9 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-  	@product = Product.find_by_user(params[:id])
+  	#@product = Product.find_by_user(params[:id])
+  	@product = Product.find(params[:id])
+  	@titre = "Edition du produit"
   end
 
   # POST /products
