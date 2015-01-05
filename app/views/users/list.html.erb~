@@ -3,11 +3,12 @@
 <table>
   <thead>
     <tr>
-      <th>Categorie de produit</th>
-      <th>Description du produit</th>
+      <th>User</th>
+      <th>Categorie</th>
+      <th>Description</th>
       <th>Commentaire</th>
-      <th>Note sur 5</th>
-      <th>Prix (en €)</th>
+      <th>Note</th>
+      <th>Prix</th>
       <th colspan="5"></th>
     </tr>
   </thead>
@@ -15,14 +16,17 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
+        	<td><%= product.user %></td>
         	<td><%= product.categorie %></td>
         	<td><%= product.description %></td>
         	<td><%= product.commentaire %></td>
         	<td><%= product.note %></td>
-        	<td><%= product.prix %>€</td>
+        	<td><%= product.prix %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+
+<%= link_to 'Ajouter un nouveau produit', new_product_path %>

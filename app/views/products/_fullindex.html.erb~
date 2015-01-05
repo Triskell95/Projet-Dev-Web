@@ -1,4 +1,4 @@
-<h1>Mes produits enregistrés</h1>
+<h1>Tous les produits</h1>
 
 <table>
   <thead>
@@ -6,7 +6,7 @@
       <th>Categorie de produit</th>
       <th>Description du produit</th>
       <th>Commentaire</th>
-      <th>Note sur 5</th>
+      <th>Note sur 10</th>
       <th>Prix (en €)</th>
       <th colspan="5"></th>
     </tr>
@@ -15,23 +15,14 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-      	<% if (current_user.id == product.user) %>
         	<td><%= product.categorie %></td>
         	<td><%= product.description %></td>
         	<td><%= product.commentaire %></td>
         	<td><%= product.note %></td>
         	<td><%= product.prix %>€</td>
-        	<td><%= link_to 'Afficher', product %></td>
-        	<% if current_user.admin? || (current_user.id == product.user) %> |
-        		<td><%= link_to 'Modifier', edit_product_path(product) %></td>
-        		<td><%= link_to 'Supprimer', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        	<% end %>
-        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'Ajouter un nouveau produit', new_product_path %>

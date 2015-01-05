@@ -6,7 +6,7 @@
       <th>Categorie de produit</th>
       <th>Description du produit</th>
       <th>Commentaire</th>
-      <th>Note sur 10</th>
+      <th>Note sur 5</th>
       <th>Prix (en €)</th>
       <th colspan="5"></th>
     </tr>
@@ -21,7 +21,7 @@
         	<td><%= product.commentaire %></td>
         	<td><%= product.note %></td>
         	<td><%= product.prix %>€</td>
-        	<td><%= link_to 'Voir', product %></td>
+        	<td><%= link_to 'Afficher', product %></td>
         	<% if current_user.admin? || (current_user.id == product.user) %> |
         		<td><%= link_to 'Modifier', edit_product_path(product) %></td>
         		<td><%= link_to 'Supprimer', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
