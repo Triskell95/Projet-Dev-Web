@@ -1,0 +1,10 @@
+Le serveur peut s'exécuter en local, mais il est aussi disponible en ligne via heroku.
+
+Le site est disponible en ligne à cette adresse : https://cryptic-brushlands-2602.herokuapp.com/
+
+Sinon pour le faire fonctionner en local :
+  - Se placer à la racine de l'application
+  - Effectuer la commande "bundle install" pour installer les gems Ruby
+  - Effectuer la commande "rake db:migrate" pour installer la base de données liée au serveur
+  - Effectuer la commande " rails s" ou "rails server" pour lancer le serveur
+  - Ouvrir le browser web et saisir l'URL : www.localhost:3000/
